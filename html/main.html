@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&family=Yellowtail&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/simplebar.css">
+    <link rel="stylesheet" href="../css/mainStyle.css">
+    <link rel="stylesheet" href="../css/mainMedia.css">
+
+    <title>Organick</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+
+    <style>
+
+        .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+            bottom: var(--swiper-pagination-bottom,0px);
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: var(--swiper-pagination-bullet-opacity, 1);
+            background: #7EB693;
+        }
+
+        .testimonialSwiper {
+            height: fit-content;
+        }
+
+        .swiper-pagination {
+            position: static;
+            text-align: center;
+            transition: .3s opacity;
+            transform: translate3d(0,0,0);
+            z-index: 10;
+        }
+
+    </style>
+
+<body>
+    <!-- header start -->
+
+    <header class="header">
+        <div class="wrapper header__wrapper">
+            <button class="header__menu"></button>
+            <a href="#" class="header__logo">
+                <div class="logo__wrapper">
+                    <img src="../image/header/logo.svg" alt="logotype">
+                    <span>Organick</span>
+                </div>
+            </a>
+            <nav class="header__nav">
+                <ul class="nav__list">
+                    <li class="nav-item">
+                        <a href="#" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../html/aboutUs.html" class="nav__link">About</a>
+                    </li>
+                    <li class="nav-item nav-item-subtitle">
+                        Pages
+                        <ul class="nav__subtitle">
+                            <li class="nav__subtitle-item">
+                                <a href="#">page</a>
+                            </li>
+                            <li class="nav__subtitle-item">
+                                <a href="#">page</a>
+                            </li>
+                            <li class="nav__subtitle-item">
+                                <a href="#">page</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav__link">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav__link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav__link">News</a>
+                    </li>
+                </ul>
+            </nav>
+            <form action="" class="header__navBar">
+                <div class="header__search-block">
+                    <input type="text" class="navBar__search">
+                    <button class="navBar__btn"></button>
+                </div>
+                <div class="navBar__cart">
+                    <div class="navBar__cart-cart"></div>
+                    <span class="navBar__cart-quantity">Cart (0)</span>
+                    <div class="cart__content">
+                        <ul class="cart__content-list" data-simplebar>
+                            <!-- <li class="cart__content-item">
+                                <article class="cart__product">
+                                    <img src="../image/product/banana.png" alt="" class="cart__product-img">
+                                        <div class="cart__product-text">
+                                        <p class="cart__product-title">Fresh Banana Fruites</p>
+                                        <span class="cart__product-price">$20.00</span>
+                                        <div class="cart__counter">
+                                            <button type="button" class="counter__minusBtn counter-btn"></button>
+                                            <span class="counter-quentity">1</span>
+                                            <button type="button" class="counter__plusBtn counter-btn"></button>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="cart__product-delete"></button>
+                                </article>
+                            </li> -->
+                        </ul>
+                        <div class="cart__content-bottom">
+                            <div class="cart__content-fullprice">
+                                <span>Итого:</span>
+                                <span class="fullprice">$0.00</span>
+                            </div>
+                            <button type="button" class="cart__content-deleteFull"></button>
+                            <button type="button" class="cart__content-btn">Go to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="modal">
+                <div class="modal__window-cart">
+                    <button type="button" class="modal__window-close"></button>
+                    <h3 class="modal-title">making an order</h3>
+                    <form class="modal__form">
+                        <div class="modal__payment-block">
+                            <div class="form_radio">
+                                <input id="visa" type="radio" name="radio" value="1" checked>
+                                <label for="visa" class="visa">Visa Payment</label>
+                            </div>
+                             
+                            <div class="form_radio">
+                                <input id="paypal" type="radio" name="radio" value="2">
+                                <label for="paypal" class="paypal">PayPal</label>
+                            </div>
+                             
+                            <div class="form_radio">
+                                <input id="master" type="radio" name="radio" value="3">
+                                <label for="master" class="master">Master Card</label>
+                            </div>
+                        </div>
+                        <div class="modal__form-line">
+                            <span class="modal__form-name">Your name</span>
+                            <input type="tel:" class="modal__input">
+                        </div>
+                        <div class="modal__form-line">
+                            <span class="modal__form-name">Your number</span>
+                            <input type="tel:"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="(555) 555 555" class="modal__input">
+                        </div>
+                        <div class="modal__form-line">
+                            <span class="modal__form-name">Your e-mail</span>
+                            <input type="email" placeholder="post@gmail.com" class="modal__input">
+                        </div>
+                        <div class="modal__price">
+                            <span class="modal__price-product"></span>
+                            <span class="modal__tax"></span>
+                            <div class="modal__price-line"></div>
+                            <span class="modal__fullprice">0.00$</span>
+                        </div>
+                        <div class="modal__btn-wrapper">
+                            <button type="Submit" class="form__btn">Order</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- header end -->
+
+    <!-- main start -->
+
+    <main class="main">
+
+        <button class="scrollTop"></button>
+
+        <!-- inner start -->
+
+        <section class="inner">
+            <div class="section__wrapper">
+                <div class="inner__block">
+                    <p class="inner__block-text">100% Natural Food</p>
+                    <h1 class="inner__block-title">Choose the best healthier way of life</h1>
+                    <a href="#" class="inner__block-btn">Explore Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- inner end -->
+
+        <!-- choice start -->
+
+        <secrion class="choice">
+            <div class="choice__wrapper section__wrapper">
+                <a href="#" class="choice__card-link">
+                    <figure class="choice__card">
+                        <img src="../image/choice/background-1.png" alt="fruit" class="choice__card-img">
+                        <div class="choice__card-info">
+                            <figcaption class="choice__card-text">Natural!!</figcaption>
+                            <figcaption class="choice__card-get">Get Garden Fresh Fruits</figcaption>
+                        </div>
+                    </figure>
+                </a>
+                <a href="#" class="choice__card-link">
+                    <figure class="choice__card">
+                        <img src="../image/choice/background-2.png" alt="fruit" class="choice__card-img">
+                        <div class="choice__card-info">
+                            <figcaption class="choice__card-text card-2">Offer!!</figcaption>
+                            <figcaption class="choice__card-get card-2">Get 10% off
+                                on Vegetables</figcaption>
+                        </div>
+                    </figure>
+                </a>
+            </div>
+        </secrion>
+
+        <!-- choice end -->
+
+        <!-- about start -->
+
+        <section class="about">
+            <div class="about__wrapper section__wrapper">
+                <img src="../image/about/fruit-image.png" alt=" image">
+                <div class="about__block">
+                    <h3 class="about__block-subtitle section__subtitle">About Us</h3>
+                    <h2 class="about__block-title section__title">We Believe in Working
+                        Accredited Farmers</h2>
+                    <p class="about__block-text">Simply dummy text of the printing and typesetting industry. Lorem had ceased to 
+                        been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                    <div class="about__advantages">
+                        <img src="../image/about/organic-icon.svg" alt="organic icon">
+                        <div class="about__advantages-info">
+                            <p class="about__advantages-title">Organic Foods Only</p>
+                            <p class="about__advantages-text">Simply dummy text of the printing and typesetting industry. Lorem Ipsum</p>
+                        </div>
+                    </div>
+                    <div class="about__advantages">
+                        <img src="../image/about/quality-icon.svg" alt="organic icon">
+                        <div class="about__advantages-info">
+                            <p class="about__advantages-title">Quality Standards</p>
+                            <p class="about__advantages-text">Simply dummy text of the printing and typesetting industry. Lorem Ipsum</p>
+                        </div>
+                    </div>
+                    <a href="#" class="about__block-btn">Shop Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- about end -->
+
+        <!-- products start -->
+
+        <section class="products">
+            <div class="products__wrapper section__wrapper">
+                <div class="products__block-title">
+                    <h3 class="section__subtitle">Categories </h3>
+                    <h2 class="section__title">Our Products</h2>
+                </div>
+                <div class="cart-message">product added</div>
+                <div class="products__catalog">
+                    <div class="products__catalog-card">
+                        <a href="#" class="products__card-btn" onclick="event.preventDefault()">
+                            <p class="catalog__card-type">Vegetable</p>
+                            <img src="../image/product/brocoli.png" alt="broccoli" class="catalog__card-img">
+                            <p class="catalog__card-name">Calabrese Broccoli</p>
+                            <div class="catalog__card-line"></div>
+                            <div class="catalog__card-info">
+                                <div class="catalog__card-price">
+                                    <span class="card__price-before">$20.00</span>
+                                    <span class="card__price-now">$13.00</span>
+                                </div>
+                                <img src="../image/product/stars.svg" alt="stars" class="card__price-stars">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="products__catalog-card">
+                        <a href="#" class="products__card-btn" onclick="event.preventDefault()">
+                            <p class="catalog__card-type">Fresh</p>
+                            <img src="../image/product/banana.png" alt="broccoli" class="catalog__card-img">
+                            <p class="catalog__card-name">Fresh Banana Fruites</p>
+                            <div class="catalog__card-line"></div>
+                            <div class="catalog__card-info">
+                                <div class="catalog__card-price">
+                                    <span class="card__price-before">$20.00</span>
+                                    <span class="card__price-now">$14.00</span>
+                                </div>
+                                <img src="../image/product/stars.svg" alt="stars" class="card__price-stars">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="products__catalog-card">
+                        <a href="#" class="products__card-btn" onclick="event.preventDefault()">
+                            <p class="catalog__card-type">Millets</p>
+                            <img src="../image/product/nuts.png" alt="broccoli" class="catalog__card-img">
+                            <p class="catalog__card-name">White Nuts</p>
+                            <div class="catalog__card-line"></div>
+                            <div class="catalog__card-info">
+                                <div class="catalog__card-price">
+                                    <span class="card__price-before">$20.00</span>
+                                    <span class="card__price-now">$15.00</span>
+                                </div>
+                                <img src="../image/product/stars.svg" alt="stars" class="card__price-stars">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="products__catalog-card">
+                        <a href="#" class="products__card-btn" onclick="event.preventDefault()">
+                            <p class="catalog__card-type">Vegetable</p>
+                            <img src="../image/product/tomato.png" alt="broccoli" class="catalog__card-img">
+                            <p class="catalog__card-name">Vegan Red Tomato</p>
+                            <div class="catalog__card-line"></div>
+                            <div class="catalog__card-info">
+                                <div class="catalog__card-price">
+                                    <span class="card__price-before">$20.00</span>
+                                    <span class="card__price-now">$17.00</span>
+                                </div>
+                                <img src="../image/product/stars.svg" alt="stars" class="card__price-stars">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="products__catalog-card">
+                        <a href="#" class="products__card-btn" onclick="event.preventDefault()">
+                            <p class="catalog__card-type">Health</p>
+                            <img src="../image/product/bean.png" alt="broccoli" class="catalog__card-img">
+                            <p class="catalog__card-name">Mung Bean</p>
+                            <div class="catalog__card-line"></div>
+                            <div class="catalog__card-info">
+                                <div class="catalog__card-price">
+                                    <span class="card__price-before">$20.00</span>
+                                    <span class="card__price-now">$11.00</span>
+                                </div>
+                                <img src="../image/product/stars.svg" alt="stars" class="card__price-stars">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="products__catalog-card">
+                        <a href="#" class="products__card-btn" onclick="event.preventDefault()">
+                            <p class="catalog__card-type">Nuts</p>
+                            <img src="../image/product/hazelnut.png" alt="broccoli" class="catalog__card-img">
+                            <p class="catalog__card-name">Brown Hazelnut</p>
+                            <div class="catalog__card-line"></div>
+                            <div class="catalog__card-info">
+                                <div class="catalog__card-price">
+                                    <span class="card__price-before">$20.00</span>
+                                    <span class="card__price-now">$12.00</span>
+                                </div>
+                                <img src="../image/product/stars.svg" alt="stars" class="card__price-stars">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="products__catalog-card">
+                        <a href="#" class="products__card-btn" onclick="event.preventDefault()">
+                            <p class="catalog__card-type">Fresh</p>
+                            <img src="../image/product/egg.png" alt="broccoli" class="catalog__card-img">
+                            <p class="catalog__card-name">Eggs</p>
+                            <div class="catalog__card-line"></div>
+                            <div class="catalog__card-info">
+                                <div class="catalog__card-price">
+                                    <span class="card__price-before">$20.00</span>
+                                    <span class="card__price-now">$17.00</span>
+                                </div>
+                                <img src="../image/product/stars.svg" alt="stars" class="card__price-stars">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="products__catalog-card">
+                        <a href="#" class="products__card-btn" onclick="event.preventDefault()">
+                            <p class="catalog__card-type">Fresh</p>
+                            <img src="../image/product/bread.png" alt="broccoli" class="catalog__card-img">
+                            <p class="catalog__card-name">Zelco Suji Elaichi Rusk</p>
+                            <div class="catalog__card-line"></div>
+                            <div class="catalog__card-info">
+                                <div class="catalog__card-price">
+                                    <span class="card__price-before">$20.00</span>
+                                    <span class="card__price-now">$15.00</span>
+                                </div>
+                                <img src="../image/product/stars.svg" alt="stars" class="card__price-stars">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="products__catalog-card">
+                        <a href="#" class="products__card-btn" onclick="event.preventDefault()">
+                            <p class="catalog__card-type">Vegetable</p>
+                            <img src="../image/product/brocoli.png" alt="broccoli" class="catalog__card-img">
+                            <p class="catalog__card-name">Calabrese Broccoli</p>
+                            <div class="catalog__card-line"></div>
+                            <div class="catalog__card-info">
+                                <div class="catalog__card-price">
+                                    <span class="card__price-before">$20.00</span>
+                                    <span class="card__price-now">$13.00</span>
+                                </div>
+                                <img src="../image/product/stars.svg" alt="stars" class="card__price-stars">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="products__catalog-card">
+                        <a href="#" class="products__card-btn" onclick="event.preventDefault()">
+                            <p class="catalog__card-type">Fresh</p>
+                            <img src="../image/product/banana.png" alt="broccoli" class="catalog__card-img">
+                            <p class="catalog__card-name">Fresh Banana Fruites</p>
+                            <div class="catalog__card-line"></div>
+                            <div class="catalog__card-info">
+                                <div class="catalog__card-price">
+                                    <span class="card__price-before">$20.00</span>
+                                    <span class="card__price-now">$14.00</span>
+                                </div>
+                                <img src="../image/product/stars.svg" alt="stars" class="card__price-stars">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="products__catalog-card">
+                        <a href="#" class="products__card-btn" onclick="event.preventDefault()">
+                            <p class="catalog__card-type">Millets</p>
+                            <img src="../image/product/nuts.png" alt="broccoli" class="catalog__card-img">
+                            <p class="catalog__card-name">White Nuts</p>
+                            <div class="catalog__card-line"></div>
+                            <div class="catalog__card-info">
+                                <div class="catalog__card-price">
+                                    <span class="card__price-before">$20.00</span>
+                                    <span class="card__price-now">$15.00</span>
+                                </div>
+                                <img src="../image/product/stars.svg" alt="stars" class="card__price-stars">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="products__catalog-card">
+                        <a href="#" class="products__card-btn" onclick="event.preventDefault()">
+                            <p class="catalog__card-type">Vegetable</p>
+                            <img src="../image/product/tomato.png" alt="broccoli" class="catalog__card-img">
+                            <p class="catalog__card-name">Vegan Red Tomato</p>
+                            <div class="catalog__card-line"></div>
+                            <div class="catalog__card-info">
+                                <div class="catalog__card-price">
+                                    <span class="card__price-before">$20.00</span>
+                                    <span class="card__price-now">$17.00</span>
+                                </div>
+                                <img src="../image/product/stars.svg" alt="stars" class="card__price-stars">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="products__catalog-card">
+                        <a href="#" class="products__card-btn" onclick="event.preventDefault()">
+                            <p class="catalog__card-type">Health</p>
+                            <img src="../image/product/bean.png" alt="broccoli" class="catalog__card-img">
+                            <p class="catalog__card-name">Mung Bean</p>
+                            <div class="catalog__card-line"></div>
+                            <div class="catalog__card-info">
+                                <div class="catalog__card-price">
+                                    <span class="card__price-before">$20.00</span>
+                                    <span class="card__price-now">$11.00</span>
+                                </div>
+                                <img src="../image/product/stars.svg" alt="stars" class="card__price-stars">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="products__catalog-card">
+                        <a href="#" class="products__card-btn" onclick="event.preventDefault()">
+                            <p class="catalog__card-type">Nuts</p>
+                            <img src="../image/product/hazelnut.png" alt="broccoli" class="catalog__card-img">
+                            <p class="catalog__card-name">Brown Hazelnut</p>
+                            <div class="catalog__card-line"></div>
+                            <div class="catalog__card-info">
+                                <div class="catalog__card-price">
+                                    <span class="card__price-before">$20.00</span>
+                                    <span class="card__price-now">$12.00</span>
+                                </div>
+                                <img src="../image/product/stars.svg" alt="stars" class="card__price-stars">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="products__catalog-card">
+                        <a href="#" class="products__card-btn" onclick="event.preventDefault()">
+                            <p class="catalog__card-type">Fresh</p>
+                            <img src="../image/product/egg.png" alt="broccoli" class="catalog__card-img">
+                            <p class="catalog__card-name">Eggs</p>
+                            <div class="catalog__card-line"></div>
+                            <div class="catalog__card-info">
+                                <div class="catalog__card-price">
+                                    <span class="card__price-before">$20.00</span>
+                                    <span class="card__price-now">$17.00</span>
+                                </div>
+                                <img src="../image/product/stars.svg" alt="stars" class="card__price-stars">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="products__catalog-card">
+                        <a href="#" class="products__card-btn" onclick="event.preventDefault()">
+                            <p class="catalog__card-type">Fresh</p>
+                            <img src="../image/product/bread.png" alt="broccoli" class="catalog__card-img">
+                            <p class="catalog__card-name">Zelco Suji Elaichi Rusk</p>
+                            <div class="catalog__card-line"></div>
+                            <div class="catalog__card-info">
+                                <div class="catalog__card-price">
+                                    <span class="card__price-before">$20.00</span>
+                                    <span class="card__price-now">$15.00</span>
+                                </div>
+                                <img src="../image/product/stars.svg" alt="stars" class="card__price-stars">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <button class="products__btn">Load More</button >
+            </div>
+        </section>
+
+        <!-- products end -->
+
+        <!-- testimonial start -->
+
+        <section class="testimonial">
+            <div class="testimonial__wrapper section__wrapper">
+                <div class="testimonial__block-title">
+                    <h3 class="section__subtitle">Testimonial</h3>
+                    <h2 class="section__title">What Our Customer Saying?</h2>
+                </div>
+                <div class="swiper testimonialSwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="slide__content">
+                            <img src="../image/testimonial/slider__person.png" alt="person" class="slide__image">
+                            <img src="../image/testimonial/slider__stars.svg" alt="stars" class="slide__stars">
+                            <p class="slide__text">Simply dummy text of the printing and typesetting industry. Lorem Ipsum simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
+                            <p class="slide__name">Sara Taylor</p>
+                            <p class="slide__post">Consumer</p>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="slide__content">
+                            <img src="../image/testimonial/slider__person.png" alt="person" class="slide__image">
+                            <img src="../image/testimonial/slider__stars.svg" alt="stars" class="slide__stars">
+                            <p class="slide__text">Simply dummy text of the printing and typesetting industry. Lorem Ipsum simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
+                            <p class="slide__name">Sara Taylor</p>
+                            <p class="slide__post">Consumer</p>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="slide__content">
+                            <img src="../image/testimonial/slider__person.png" alt="person" class="slide__image">
+                            <img src="../image/testimonial/slider__stars.svg" alt="stars" class="slide__stars">
+                            <p class="slide__text">Simply dummy text of the printing and typesetting industry. Lorem Ipsum simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
+                            <p class="slide__name">Sara Taylor</p>
+                            <p class="slide__post">Consumer</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+
+                <div class="testimonual__statics">
+                     <div class="testimonual__statics-block">
+                        <p class="statics__block-value">100%</p>
+                        <p class="statics__block-text">Organic</p>
+                    </div>
+                    <div class="testimonual__statics-block">
+                        <p class="statics__block-value">285</p>
+                        <p class="statics__block-text">Active Product</p>
+                    </div>
+                    <div class="testimonual__statics-block">
+                        <p class="statics__block-value">350+</p>
+                        <p class="statics__block-text">Organic Orchads</p>
+                    </div>
+                    <div class="testimonual__statics-block">
+                        <p class="statics__block-value">25+</p>
+                        <p class="statics__block-text">Years of Farming</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- testimonial end -->
+
+        <!-- offer start -->
+
+        <section class="offer">
+            <div class="offer__wrapper section__wrapper">
+                <div class="offer__block-top">
+                    <div class="block__top-title">
+                        <h3 class="section__subtitle">Offer</h3>
+                        <h2 class="offer__title section__title">We Offer Organic For You</h2>
+                    </div>
+                    <a href="#" class="block__top-btn">View All Product</a>
+                </div>
+                <div class="offer__sales">
+                    <div class="offer__card offer__catalog-card">
+                        <p class="offer__card-type">Vegetable</p>
+                        <img src="../image/offer/bean.png" alt="bean" class="offer__card-img">
+                        <p class="offer__card-name">Mung Bean</p>
+                        <div class="offer__card-line"></div>
+                        <div class="offer__card-info">
+                            <div class="offer__card-price">
+                                <span class="card__price-before">$20.00</span>
+                                <span class="card__price-now">$11.00</span>
+                            </div>
+                            <img src="../image/product/stars.svg" alt="stars" class="card__price-stars">
+                        </div>
+                    </div>
+                    <div class="offer__card offer__catalog-card">
+                        <p class="offer__card-type">Vegetable</p>
+                        <img src="../image/offer/hazelnut.png" alt="hazelnut" class="offer__card-img">
+                        <p class="offer__card-name">Brown Hazelnut</p>
+                        <div class="offer__card-line"></div>
+                        <div class="offer__card-info">
+                            <div class="offer__card-price">
+                                <span class="card__price-before">$20.00</span>
+                                <span class="card__price-now">$12.00</span>
+                            </div>
+                            <img src="../image/product/stars.svg" alt="stars" class="card__price-stars">
+                        </div>
+                    </div>
+                    <div class="offer__card offer__catalog-card">
+                        <p class="offer__card-type">Vegetable</p>
+                        <img src="../image/offer/onion.png" alt="onion" class="offer__card-img">
+                        <p class="offer__card-name">Onion</p>
+                        <div class="offer__card-line"></div>
+                        <div class="offer__card-info">
+                            <div class="offer__card-price">
+                                <span class="card__price-before">$20.00</span>
+                                <span class="card__price-now">$17.00</span>
+                            </div>
+                            <img src="../image/product/stars.svg" alt="stars" class="card__price-stars">
+                        </div>
+                    </div> 
+                    <div class="offer__card offer__catalog-card">
+                        <p class="offer__card-type">Vegetable</p>
+                        <img src="../image/offer/cabbage.png" alt="cabbage" class="offer__card-img">
+                        <p class="offer__card-name">Cabbage</p>
+                        <div class="offer__card-line"></div>
+                        <div class="offer__card-info">
+                            <div class="offer__card-price">
+                                <span class="card__price-before">$20.00</span>
+                                <span class="card__price-now">$17.00</span>
+                            </div>
+                            <img src="../image/product/stars.svg" alt="stars" class="card__price-stars">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- offer end -->
+
+        <!-- eco start -->
+
+        <section class="eco">
+            <div class="eco__wrapper section__wrapper">
+                <img src="../image/ecoFrendly/Eco__image.png" alt="eco">
+                <div class="eco__block-info">
+                    <h3 class="section__subtitle">Eco Friendly</h3>
+                    <h2 class="eco__title section__title">Econis is a Friendly Organic Store</h2>
+                    <div class="block__info-point">
+                        <p class="info__point-title">Start with Our Company First</p>
+                        <p class="info__point-text">Sed ut perspiciatis unde omnis iste natus error sit voluptat accusantium doloremque laudantium. Sed ut perspiciatis.
+                        </p>
+                    </div>
+                    <div class="block__info-point">
+                        <p class="info__point-title">Start with Our Company First</p>
+                        <p class="info__point-text">Sed ut perspiciatis unde omnis iste natus error sit voluptat accusantium doloremque laudantium. Sed ut perspiciatis.
+                        </p>
+                    </div>
+                    <div class="block__info-point">
+                        <p class="info__point-title">Start with Our Company First</p>
+                        <p class="info__point-text">Sed ut perspiciatis unde omnis iste natus error sit voluptat accusantium doloremque laudantium. Sed ut perspiciatis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- eco end -->
+
+        <!-- catalog start -->
+
+        <section class="catalog">
+            <div class="catalog__wrapper section__wrapper">
+                <div class="catalog__card card-1">
+                    <img src="../image/catalog/juice-choice.png" alt="organic juice">
+                    <div class="catalog__position-link">
+                        <div class="wrapper__link">
+                            <a href="#" class="catalog__card-link">Organic Juice</a>   
+                        </div>   
+                    </div>
+                </div>
+                <div class="catalog__card card-2">
+                    <img src="../image/catalog/food__choice.png" alt="organic juice">
+                    <div class="catalog__position-link">
+                        <div class="wrapper__link">
+                            <a href="#" class="catalog__card-link">Organic Juice</a>   
+                        </div>   
+                    </div>         
+                </div>
+                <div class="catalog__card card-3">
+                    <img src="../image/catalog/cookis__choice.png" alt="organic juice">
+                    <div class="catalog__position-link">
+                        <div class="wrapper__link">
+                            <a href="#" class="catalog__card-link">Organic Juice</a>   
+                        </div>   
+                    </div>         
+                </div>
+            </div>
+        </section>
+
+        <!-- catalog end -->
+
+        <!-- news start -->
+
+        <section class="news">
+            <div class="news__wrapper section__wrapper">
+                <div class="news__block-top">
+                    <div class="news__top-title">
+                        <h3 class="section__subtitle">News</h3>
+                        <h2 class="section__title">Discover weekly content about organic food, & more</h2>
+                    </div>
+                    <a href="#" class="news__btn">More News</a>
+                </div>
+                <div class="news__block-main">
+                    <div class="news__block-card card-1">
+                        <img src="../image/news/salt.png" alt="salt" class="news__card-image">
+                        <p class="news__card-date">25 Nov</p>
+                        <div class="news__card-info">
+                            <p class="news__info name">By Rachi Card</p>
+                            <p class="news__info title">The Benefits of Vitamin D & How to Get It</p>
+                            <p class="news__info text">Simply dummy text of the printing and typesetting industry. Lorem Ipsum</p>
+                            <a href="#" class="news__info btn">Read More</a>
+                        </div>
+                    </div>
+                    <div class="news__block-card card-2">
+                        <img src="../image/news/tomato.png" alt="tomato" class="news__card-image">
+                        <p class="news__card-date">25 Nov</p>
+                        <div class="news__card-info">
+                            <p class="news__info name">By Rachi Card</p>
+                            <p class="news__info title">The Benefits of Vitamin D & How to Get It</p>
+                            <p class="news__info text">Simply dummy text of the printing and typesetting industry. Lorem Ipsum</p>
+                            <a href="#" class="news__info btn">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- news end -->
+
+        <!-- subscrive start -->
+
+        <section class="subscride">
+            <div class="subscride__wrapper section__wrapper">
+                <p class="subscribe-text">Subscribe to our Newsletter</p>
+                <form class="subscribe__form">
+                    <input type="text" class="subscribe__form-input" placeholder="Your Email Address">
+                    <button class="subscribe__form-btn"><span>Subscribe</span></button>
+                </form>
+            </div>
+        </section>
+
+        <!-- subscrive end -->
+    </main>
+
+    <!-- main end -->
+
+    <!-- footer start -->
+
+    <footer class="footer">
+        <div class="footer__wrapper section__wrapper">
+            <div class="footer__contact">
+                <h3 class="footer-title footer__contact-title">Contact Us</h3>
+                <div>
+                    <p class="footer__contact-text">Email</p>
+                    <a href="mailto:needhelp@Organia.com" class="footer__contact-link footer-link">needhelp@Organia.com</a>
+                </div>
+                <div>
+                    <p class="footer__contact-text">Phone</p>
+                    <a href="tel:666 888 888" class="footer__contact-link  footer-link">666 888 888</a>
+                </div>
+                <div>
+                    <p class="footer__contact-text">Address</p>
+                    <a href="mailto:needhelp@Organia.com" class=" footer-link">88 road, borklyn street, USA</a>
+                </div>
+            </div>
+            <div class="footer-line"></div>
+            <div class="footer__social">
+                <a href="#" class="footer__logo">
+                    <img src="../image/header/logo.svg" alt="logo" class="footer__logo-img">
+                   <p class>Organick</p>
+                </a>
+                <p class="footer__social-text">Simply dummy text of the printing and typesetting industry. Lorem Ipsum simply dummy text of the printing </p>
+                <ul class="footer__social-list">
+                    <li class="footer__list-item">
+                        <a href="#" class="footer__list-link">
+                            <img src="../image/footer/Insta-icon.svg" alt="instagramm">
+                        </a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="#" class="footer__list-link">
+                            <img src="../image/footer/facebook-icon.svg" alt="facebook">
+                        </a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="#" class="footer__list-link">
+                            <img src="../image/footer/twitter-icon.svg" alt="twitter">
+                        </a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="#" class="footer__list-link">
+                            <img src="../image/footer/pinterest-icon.svg" alt="pinterest">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-line"></div>
+            <div class="footer__pages">
+                <h3 class="footer-title footer__pages-title">Utility Pages</h3>
+                <ul class="footer__pages-list">
+                    <li class="footer__pages-item">
+                        <a href="#" class="footer__pages-link footer-link">Style Guide</a>
+                    </li>
+                    <li class="footer__pages-item">
+                        <a href="#" class="footer__pages-link footer-link">404 Not Found</a>
+                    </li>
+                    <li class="footer__pages-item">
+                        <a href="#" class="footer__pages-link footer-link">Password Protected</a>
+                    </li>
+                    <li class="footer__pages-item">
+                        <a href="#" class="footer__pages-link footer-link">Licences</a>
+                    </li>
+                    <li class="footer__pages-item">
+                        <a href="#" class="footer__pages-link footer-link">Changelog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- footer end -->
+
+    <script src="../js/simplebar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/modalCart.js"></script>
+
+    <script>
+        var swiper = new Swiper(".testimonialSwiper", {
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            // autoplay: {
+            // delay: 5000,
+            // },
+        });
+      </script>
+</body>
+</html>
